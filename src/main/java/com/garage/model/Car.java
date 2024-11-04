@@ -3,7 +3,6 @@ package com.garage.model;
 import com.garage.resources.Customer;
 
 import java.util.Calendar;
-import java.util.Currency;
 import java.util.HashSet;
 import java.util.Set;
 
