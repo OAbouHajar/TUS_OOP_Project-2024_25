@@ -1,2 +1,2 @@
 # TUS_OOP_Project-2024_25
-test
+The project implemented is a Garage Management System, designed to manage various aspects of a garage, such as vehicle details, staff, and services offered. The system is built using Java, adhering to both fundamental and advanced object-oriented programming principles, utilizing features from Java 21 LTS. The project was inspired by a real-world use case: my brother's garage, which I found to be an ideal domain for developing this application, given my previous experience as a car mechanic.
