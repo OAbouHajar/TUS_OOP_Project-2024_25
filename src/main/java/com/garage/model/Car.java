@@ -19,7 +19,7 @@ public record Car(String brand, String model, CarType type, String regNumber, in
         }
         // Check for uniqueness of registration number
         if (regNumbers.contains(regNumber)) {
-            throw new IllegalArgumentException("#### Registration number must be unique: " + regNumber + " Car: " + brand + " " + model + "Was not added to the system"
+            throw new IllegalArgumentException("#### Registration number must be unique: " + regNumber + " Car: " + brand + " " + model + " Was not added to the system"
             );
         }
         // Add the registration number to the set after successful validation

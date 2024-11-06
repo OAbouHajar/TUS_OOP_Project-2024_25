@@ -31,7 +31,7 @@ public class CarGarage implements Garage {
     }
 
     @Override
-    public Optional<Car> getCar(String regNumber) {
+    public Optional<Car> getCars(String regNumber) {
 //        return cars.stream().filter(car -> car.model().equals(model)).findFirst();
         return cars.stream().filter(car -> car.regNumber().equals(regNumber)).findFirst();
     }
@@ -42,10 +42,10 @@ public class CarGarage implements Garage {
     public void issueRepairInvoice(Car carInstance, double cost) throws InvalidRepairCostException {
 
         if (cost < 0) {
-            throw new InvalidRepairCostException("Repair cost cannot be negative.");
+            throw new InvalidRepairCostException("Repair cost cannot be negative, please check the cost value again.");
         }
 
-        getCar(carInstance.regNumber()).ifPresentOrElse(
+        getCars(carInstance.regNumber()).ifPresentOrElse(
             car -> System.out.println("Repair performed on " + car.getCarDetails() + " for $" + cost),
             () -> System.out.println("Car not found in garage.")
         );

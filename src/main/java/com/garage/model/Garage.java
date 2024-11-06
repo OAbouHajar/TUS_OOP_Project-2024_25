@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface Garage {
     String garageName();
     void addCar(Car car);
-    Optional<Car> getCar(String model);
+    Optional<Car> getCars(String model);
     void issueRepairInvoice(Car carInstance, double cost) throws InvalidRepairCostException;
 
     // static methods cannot be overridden
