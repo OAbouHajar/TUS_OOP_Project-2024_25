@@ -32,11 +32,13 @@ public record Car(String brand, String model, CarType type, String regNumber, in
     }
 
     public String getCarDetails() {
-        return brand + " " + model + " (" + year + ") Owner: " + owner.getName() + " Owner Phone: " + owner.getPhoneNumber();
+        return "Car Reg: "  + regNumber + " Brand: " +  brand + " " + model + " (" + year + ") Owner: " + owner.getName() + " Owner Phone: " + owner.getPhoneNumber();
     }
 
     // Optional method to remove a registration number (for cleanup)
     public static void removeRegNumber(String regNumber) {
         regNumbers.remove(regNumber);
     }
+
+
 }

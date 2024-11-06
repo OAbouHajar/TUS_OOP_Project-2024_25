@@ -1,6 +1,7 @@
 
 package com.garage.staff;
 
+import com.garage.model.Car;
 import com.garage.staff.Staff;
 
 // Represents a manager who can approve repairs in the garage.
@@ -15,7 +16,7 @@ public final class Manager extends Staff {
         return "Manager";
     }
 
-    public void approveRepair(String model) {
-        System.out.println(name + " approved the repair for " + model);
+    public void approveRepair(Car car) {
+        System.out.println(name + " approved the repair for " + car.regNumber());
     }
 }

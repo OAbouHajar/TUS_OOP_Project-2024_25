@@ -2,7 +2,6 @@
 package com.garage.model;
 
 import com.garage.exception.InvalidRepairCostException;
-import com.garage.model.Car;
 
 import java.util.Optional;
 
@@ -11,8 +10,9 @@ public interface Garage {
     String garageName();
     void addCar(Car car);
     Optional<Car> getCar(String model);
-    void performRepair(String model, double cost) throws InvalidRepairCostException;
+    void issueRepairInvoice(Car carInstance, double cost) throws InvalidRepairCostException;
 
+    // static methods cannot be overridden
     static String serviceHours() {
         return "Garage operates from 9 AM to 6 PM";
     }

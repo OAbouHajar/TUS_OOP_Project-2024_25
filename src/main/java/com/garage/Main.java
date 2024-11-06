@@ -31,9 +31,12 @@ public class Main {
         Customer customerOsama = new Customer("Osama", "083-123-1232");
         Customer customerJack = new Customer("Osama", "083-123-1232");
 
+        System.out.println("---------------------------------------------------------------");
+
         // Add two cars to the garage.
         Car car1 = new Car("Audi", "A6", CarType.SALON, "151D3242", 2020, customerOsama);
         Car car2 = new Car("Honda", "Civic", CarType.HATCHBACK, "152D3242",2019, customerJack);
+        System.out.println("---------------------------------------------------------------");
 
 
         // add another car with same regNumber ...
@@ -42,23 +45,39 @@ public class Main {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        System.out.println("---------------------------------------------------------------");
 
         myGarage.addCar(car1); // Add the first car
         myGarage.addCar(car2); // Add the second car
+        System.out.println("---------------------------------------------------------------");
 
         // Create a mechanic and a manager.
         Mechanic mechanic = new Mechanic("John", 5);
         Manager manager = new Manager("Sarah", 10);
+        System.out.println("---------------------------------------------------------------");
 
         // Perform a repair on one of the cars.
         try {
-            myGarage.performRepair(car1.regNumber(), 250);
             mechanic.repair(car1);
-            manager.approveRepair(car1.regNumber());
+            myGarage.issueRepairInvoice(car1, 250);
+            manager.approveRepair(car1);
 
         } catch (InvalidRepairCostException e) {
             System.out.println(e.getMessage());
         }
+        System.out.println("---------------------------------------------------------------");
+
+        // Perform a repair on one of the cars car 2 where we expect Exception for invalid cost.
+        try {
+            mechanic.repair(car2);
+            myGarage.issueRepairInvoice(car2, -1);
+            manager.approveRepair(car2);
+
+        } catch (InvalidRepairCostException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("---------------------------------------------------------------");
+
 
         // Output the garage's service hours.
         System.out.println(Garage.serviceHours());
